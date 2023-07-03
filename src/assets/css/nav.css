@@ -1,0 +1,24 @@
+.nav-responsive{
+    right: -100%;
+    animation: move-nav .5s ease-in-out forwards;
+}
+
+.nav-responsive-hidden{
+    transition: .5s all !important;
+    opacity: 0;
+}
+
+.app-nav{
+    animation-delay: 5.5s !important;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes move-nav{
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 0;
+    }
+}

@@ -1,0 +1,23 @@
+.landing-page{
+    height: calc(100vh - 130px);
+    position: relative;
+    z-index: 10;
+}
+
+.gif-container img{
+    border-radius: .5rem;
+}
+
+.landing-btn{
+    bottom: 4rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.landing-answer{
+    transition-delay: 5s !important;
+}
+
+.landing-container{
+    height: calc(100vh - 128px);
+}
