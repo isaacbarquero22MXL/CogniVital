@@ -186,7 +186,8 @@ const Author = () => {
             Para desarrolladores
           </div>
           <a
-            href="#"
+            target={'_blank'}
+            href="https://github.com/isaacbarquero22MXL/CogniVital"
             className="mt-[1.5rem] transition tranistion-duration-[300ms] hover:bg-white [&:hover>*]:text-[#000] [&:hover_svg_path]:fill-[#000] active:scale-[.9] flexbox pointer border-[2px] px-[2rem] py-[.75rem] border-solid border-[#FFF] radius-round"
           >
             <span>{getIcon("githubIcon", "w-[32px]")}</span>
@@ -194,6 +195,10 @@ const Author = () => {
               Repositorio de CogniVital
             </span>
           </a>
+          <div className="color-white text-[1.5rem] w-full text-center mt-[5rem] flexbox">
+            <span className="mr-3">{getIcon('gmailIcon', 'w-[32px]')}</span>
+             <span>isaacbarquero22@gmail.com</span>
+          </div>
           <div className="max-w-7xl w-full mt-[6rem]"></div>
         </div>
       </div>

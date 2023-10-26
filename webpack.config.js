@@ -14,6 +14,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader', // Usa babel-loader para transpilar archivos JS/JSX
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
       {

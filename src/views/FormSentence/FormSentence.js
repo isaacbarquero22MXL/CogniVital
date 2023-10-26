@@ -5,7 +5,6 @@ import ReactBSAlert from "react-bootstrap-sweetalert";
 import { sentences } from "./sentences";
 //styles
 import "./../../assets/css/form-sentence.css";
-import Confetti from "../../utils/Confetti";
 import Firework from "../../utils/Firework";
 import HowToPlay from "../../components/Util/HowToPlay";
 
