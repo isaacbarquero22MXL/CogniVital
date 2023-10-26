@@ -6,6 +6,16 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 //style
 import "./../../assets/css/labyrinth.css";
 import LabyrinthImage from "./LabyrinthImage";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "laberintos",
+  description: (
+    <>
+      <div className="mb-[1.5rem]">Es sencillo se te mostrará un laberinto en pantalla, si no te gusta puedes ir intercambiando entre distintos aleatoriamente. En la parte inferior tienes diferentes colores para subrayar el camino, la opcion de borrador y limpiar todo el camino. En este modo libre solo arrastra el ratón por la pantalla para comenzar a dibujar el camino. ¡Suerte!</div>
+    </>
+  ),
+};
 
 const Labyrinth = () => {
   // Hooks
@@ -266,6 +276,10 @@ const Labyrinth = () => {
         </div>
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+      />
       <MenuOptionsUtil />
     </>
   );

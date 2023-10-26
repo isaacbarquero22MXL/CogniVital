@@ -186,3 +186,8 @@
 .selected-fruit > .figure-fruit{
   background: rgba(45, 114, 197, .75) !important;
 }
+
+.game-info .flying-sign-wrapper{
+  position: relative !important;
+  margin-top: 112px;
+}

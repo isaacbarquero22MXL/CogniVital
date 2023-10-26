@@ -7,6 +7,35 @@ import "./../../assets/css/fake-floors.css";
 import FlyingSign from "./FlyingSign";
 import ReactAudioPlayer from "react-audio-player";
 import audioFile from "./../../assets/sounds/tic.mp3";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "pisos falsos",
+  description: (
+    <div className="game-info">
+      <div className="mb-[1.5rem] relative">
+        Este es un verdadero desafío. Tendrás solo 10 segundos para memorizar la
+        posición de las frutas, cuando se acabe el tiempo, se mostrará una fruta
+        aleatoria, pero no tán rápido la fruta que deberas seleccionar será
+        cuando la pantalla cambie a color amarrillo.
+      </div>
+      <FlyingSign
+        icon={getIcon("appleIcon", `w-[${80}px] h-[${80}px]`)}
+        style={{ textAlign: "left" }}
+        alignment={"items-center"}
+        counter={0}
+        showAnswerScreen={true}
+      />
+      <div className="mb-[1rem] relative">
+        A medida que vayas avanzado irán apareciendo más frutas hasta un total
+        de 8 diferentes. El juego consiste en poder llegar hasta las 8 frutas y
+        mantenerse ganando. Sin embargo si seleccionas una baldoza que no
+        contiene la fruta correcta, perderás. ¡Suerte!
+      </div>
+    </div>
+  ),
+};
+
 const FakeFloor = () => {
   //Hooks
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -48,6 +77,7 @@ const FakeFloor = () => {
   const ticRef = useRef();
   //Figures
   const floorFigures = [
+    // apple
     {
       id: "apple",
       icon: getIcon(
@@ -56,6 +86,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // orange
     {
       id: "orange",
       icon: getIcon(
@@ -64,6 +95,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // watermelon
     {
       id: "watermelon",
       icon: getIcon(
@@ -72,6 +104,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // banana
     {
       id: "banana",
       icon: getIcon(
@@ -80,6 +113,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // strawberry
     {
       id: "strawberry",
       icon: getIcon(
@@ -88,6 +122,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // raspberry
     {
       id: "raspberry",
       icon: getIcon(
@@ -96,6 +131,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // pineapple
     {
       id: "pineapple",
       icon: getIcon(
@@ -104,6 +140,7 @@ const FakeFloor = () => {
       ),
       background: "bg-[#FFFFFF]",
     },
+    // cherry
     {
       id: "cherry",
       icon: getIcon(
@@ -376,13 +413,13 @@ const FakeFloor = () => {
       // to show congrats message
       if (figureOfAnswer.id === fruitSelected) {
         setCongrats(selectCongratsMessage());
-      }else{
-        setIndication('!Oh No!');
+      } else {
+        setIndication("!Oh No!");
       }
 
       setTimeout(() => {
         removeAllFruitIcons();
-        setCongratsMessage(null)
+        setCongratsMessage(null);
         if (figureOfAnswer.id === fruitSelected) {
           continueGame();
         } else {
@@ -559,6 +596,11 @@ const FakeFloor = () => {
         />
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+        className={"relative"}
+      />
       <MenuOptionsUtil />
     </>
   );

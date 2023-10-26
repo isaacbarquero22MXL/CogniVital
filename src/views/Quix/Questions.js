@@ -493,7 +493,7 @@ export const questions = [
   },
   // Question #21
   {
-    question: `¿Cuál es el animal que hace "mu" y produce leche?`,
+    question: `¿Cuál es el animal que hace el sonido de "rebuzno"​ o "roznido"​?`,
     hasMultimedia: false,
     answers: [
       {
@@ -501,7 +501,7 @@ export const questions = [
         isCorrect: false,
       },
       {
-        answer: "Vaca",
+        answer: "Burro",
         isCorrect: true,
       },
       {
@@ -509,7 +509,7 @@ export const questions = [
         isCorrect: false,
       },
       {
-        answer: "Perro",
+        answer: "Venado",
         isCorrect: false,
       },
     ],

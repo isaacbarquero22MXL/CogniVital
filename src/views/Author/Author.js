@@ -14,12 +14,12 @@ const Author = () => {
   }, []);
 
   // go to top of window
-  //   useEffect(() => {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   }, []);
+    useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, []);
 
   // remove container max-width
   useEffect(() => {
@@ -39,7 +39,7 @@ const Author = () => {
           />
         </div>
         <div className="author-name absolute left-[50%] top-[50%] translate-y-[-50%]">
-          <div className="text-center font-bold text-[4.5rem] color-white">
+          <div className="text-center font-bold text-[3rem] sm:text-[4.5rem] color-white">
             <div className="animate-fade-down inline-block animate-duration-[1000ms] animate-delay-[300ms]">
               Isaac
             </div>{" "}
@@ -51,10 +51,11 @@ const Author = () => {
               Lizano
             </div>
             <div
-              className="text-[1.5rem] mt-[1rem] animate-fade-down animate-duration-[1000ms] animate-delay-[1000ms]"
-              style={{ fontFamily: "consola" }}
+              className="text-[1.5rem] mt-[1rem] animate-fade-down animate-duration-[1000ms] animate-delay-[1000ms] code-font-family"
             >
-              {"<Programador/>"}
+              <span className="text-[#808080]">{'<'}</span>
+              <span className="text-[#4EC9B0]">{'Programador'}</span>
+              <span className="text-[#808080]">{'/>'}</span>
             </div>
           </div>
         </div>
@@ -189,7 +190,7 @@ const Author = () => {
             className="mt-[1.5rem] transition tranistion-duration-[300ms] hover:bg-white [&:hover>*]:text-[#000] [&:hover_svg_path]:fill-[#000] active:scale-[.9] flexbox pointer border-[2px] px-[2rem] py-[.75rem] border-solid border-[#FFF] radius-round"
           >
             <span>{getIcon("githubIcon", "w-[32px]")}</span>
-            <span className="ml-2 text-[var(--color-white)] font-bold text-[1.2rem]">
+            <span className="ml-3 code-font-family text-[var(--color-white)] font-bold text-[1.2rem]">
               Repositorio de CogniVital
             </span>
           </a>

@@ -7,6 +7,25 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 //style
 import "./../../assets/css/sort-figures.css";
 import DraggableDiv from "./DraggableDiv";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "ordernar las figuras",
+  description: (
+    <>
+      <div className="mb-[1.5rem]">Va a haber un tablero con 4 tipos de figuras:</div>
+      <ul className="text-[1.2rem]">
+        <li className="circle mb-2 font-bold flex w-[180px] justify-between">Círculo {getIcon("circleIcon", "w-[24px] inline-block")}</li>
+        <li className="square mb-2 font-bold flex w-[180px] justify-between">Cuadrado {getIcon("squareIcon", "w-[24px] inline-block")}</li>
+        <li className="triangle mb-2 font-bold flex w-[180px] justify-between">Triángulo {getIcon("triangleIcon", "w-[24px] inline-block")}</li>
+        <li className="star mb-2 font-bold flex w-[180px] justify-between">Estrella {getIcon("starIcon", "w-[24px] inline-block")}</li>
+      </ul>
+      <div className="mt-[1.5rem]">En la parte inferior estará el espacio de cada figura con su simbolo. El juego consiste en ordenar cada figura, para eso se deberá arrastrar con el ratón cada figura a su respectivo espacio. ¡Suerte!</div>
+
+    </>
+  ),
+};
+
 const SortFigures = () => {
   //Hooks
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -246,6 +265,11 @@ const SortFigures = () => {
         </div>
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+        className={`max-w-7xl mx-auto ${isGameStarted ? 'mt-[300px]': ''}`}
+      />
       <MenuOptionsUtil />
     </>
   );

@@ -5,7 +5,21 @@ import MenuOptionsUtil from "../Menu/MenuOptionsUtil";
 import { Step, StepLabel, Stepper } from "@mui/material";
 import { MultimediaType, questions } from "./Questions";
 import "./../../assets/css/quix.css";
-import ReactAudioPlayer from "react-audio-player";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "Quix",
+  description: (
+    <>
+      <div className="mb-[1.5rem]">
+        Hora de poner a prueba ese conocimiento. Tienes 10 preguntas para
+        responder. Pueden ser preguntas normales, preguntas con imagen o con
+        audio. Responde correctamente todas las preguntas para ganarte un ¡100!
+        ¡Suerte!
+      </div>
+    </>
+  ),
+};
 const Quix = () => {
   //Hooks
   const [isGameStarted, setIsGameStarted] = useState(false);
@@ -164,9 +178,7 @@ const Quix = () => {
   // End game panel
   const EndGamePanel = (
     <div className=" animate-fade animate-duration-[300ms] z-[100] absolute w-full left-0 h-full top-0 flexbox flex-column">
-      <h1 className="font-[1.75rem] font-bold mb-3">
-        ¡Has completado Quix!
-      </h1>
+      <h1 className="font-[1.75rem] font-bold mb-3">¡Has completado Quix!</h1>
       <div className="mb-3 text-[1.5rem]">Veamos tus resultados</div>
       <div className="flexbox mb-3">
         {answerProgress.map((progress, index) => (
@@ -186,7 +198,7 @@ const Quix = () => {
       >
         Salir
       </div>
-      {calculateAverage() == 100 && (<Firework animationDuration={5000} />)}
+      {calculateAverage() == 100 && <Firework animationDuration={5000} />}
     </div>
   );
 
@@ -324,6 +336,10 @@ const Quix = () => {
           </div>
         </div>
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+      />
       <MenuOptionsUtil />
     </>
   );

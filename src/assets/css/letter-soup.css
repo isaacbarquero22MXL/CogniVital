@@ -29,7 +29,7 @@
   }
 
   .marked{
-    background-color: #000;
+    background-color: var(--smooth-black);
     color: white;
     font-weight: bolder;
   }

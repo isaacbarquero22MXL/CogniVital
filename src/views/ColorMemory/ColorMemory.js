@@ -7,6 +7,13 @@ import Confetti from "../../utils/Confetti";
 import MenuOptions from "../Menu/MenuOptions";
 import MenuOptionsUtil from "../Menu/MenuOptionsUtil";
 import Firework from "../../utils/Firework";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "Memoriza el color",
+  description:
+    "Hay 9 botones en pantalla, aparecerá una secuencia de colores que deberás imitar. A medidas que vayas avanzando el patrón de colores irá aumentando y el tiempo entre los colores será más rápido. Supera 10 niveles para completar el juego. ¡Suerte!",
+};
 
 const ColorMemory = () => {
   // Hooks
@@ -63,7 +70,6 @@ const ColorMemory = () => {
       }
     });
   };
-
 
   const GameLoader = (
     <div
@@ -489,6 +495,7 @@ const ColorMemory = () => {
         </div>
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay gameName={gameInfo.gameName} description={gameInfo.description}/>
       <MenuOptionsUtil />
     </>
   );

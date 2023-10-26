@@ -8,6 +8,14 @@ import ReactBSAlert from "react-bootstrap-sweetalert";
 import "./../../assets/css/letter-soup.css";
 import { words } from "./words";
 import Firework from "../../utils/Firework";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "sopa de letras",
+  description:
+    "Hay un tablero con muchas letras y una lista con 16 palabras que deberás muy atentamente encontrar. Busca todas las palabras para completar el juego. Para marcar las letras has clic con el ratón en cada letra y cuando al fin encuentres las palabra, táchala de la lista haciendo clic con el ratón sobre la palabra. ¡Suerte!",
+};
+
 const LetterSoup = () => {
   // hooks
   const [letterSoup, setLetterSoup] = useState([]);
@@ -420,6 +428,7 @@ const LetterSoup = () => {
         </div>
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay gameName={gameInfo.gameName} description={gameInfo.description}/>
       <MenuOptionsUtil />
     </>
   );

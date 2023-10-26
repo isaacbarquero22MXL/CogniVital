@@ -3,11 +3,29 @@ import React, { useEffect, useRef, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Countdown from "react-countdown";
 import getIcon from "../../assets/img/svg";
+import HowToPlay from "../../components/Util/HowToPlay";
 import Firework from "../../utils/Firework";
 import MenuOptionsUtil from "../Menu/MenuOptionsUtil";
 import "./../../assets/css/balloon.css";
 import audioFile from "./../../assets/sounds/pop.wav";
 import goldenAudioFile from "./../../assets/sounds/shine.mp3";
+
+const gameInfo = {
+  gameName: "Fiesta POP",
+  description: (
+    <>
+      <div className="mb-[1.5rem]">
+        Tendrás 2 minutos para conseguir todos los puntos que puedas y ser el
+        #1. Para conseguir puntos tienes que reventar globos haciendo clic con
+        el ratón rápidamente. Los globos ordinarios valen 10 puntos, pero la
+        suerte puede estar de tu lado, cada cierto tiempo puede salir globos{" "}
+        <span className="bg-white px-[1rem] py-[.25rem] radius-round font-bold mr-2"> <span className="golden-text font-bold">dorados</span></span>
+        que te darán 50 puntos. ¿Serás capaz de batir
+        records? ¡Suerte!
+      </div>
+    </>
+  ),
+};
 
 // Custom Balloon component
 const Ballon = ({
@@ -30,7 +48,6 @@ const Ballon = ({
       setShow(true);
     }, showDelay);
   }, []);
-
 
   // Show balloon on screen when show changes to true
   useEffect(() => {
@@ -81,11 +98,24 @@ const MyCustomCountdown = ({ onComplete }) => {
       // Render a countdown
       return (
         <div className="score-counter flex items-center justify-start bg-white radius-0-2-5 absolute top-[1.5rem] left-[1.5rem] py-[.5rem] px-[2rem] font-bold text-[1.5rem]">
-            <span className="rotate-[-15deg] mr-2">
-                {getIcon('clockIcon', `w-[32px] [&>g>g>g>path]:transition [&>g>g>g>path]:duration-[300ms] ${formatted.minutes == 0 && formatted.seconds <= 10 ? "[&>g>g>g>path]:fill-[#FB3A47]" : ''}`)}
-            </span>
-          <span className={`transition duration-[300ms] ${formatted.minutes == 0 && formatted.seconds <= 10 ? "text-[#FB3A47]" : ''}`}>
-           {formatted.minutes}:{formatted.seconds}
+          <span className="rotate-[-15deg] mr-2">
+            {getIcon(
+              "clockIcon",
+              `w-[32px] [&>g>g>g>path]:transition [&>g>g>g>path]:duration-[300ms] ${
+                formatted.minutes == 0 && formatted.seconds <= 10
+                  ? "[&>g>g>g>path]:fill-[#FB3A47]"
+                  : ""
+              }`
+            )}
+          </span>
+          <span
+            className={`transition duration-[300ms] ${
+              formatted.minutes == 0 && formatted.seconds <= 10
+                ? "text-[#FB3A47]"
+                : ""
+            }`}
+          >
+            {formatted.minutes}:{formatted.seconds}
           </span>
         </div>
       );
@@ -270,7 +300,7 @@ const POPParty = () => {
   const playAudio = (isGolden) => {
     audioRef.current.audioEl.current.play();
     // play golden audio if balloon is golden
-    if(isGolden) goldenAudioRef.current.audioEl.current.play();
+    if (isGolden) goldenAudioRef.current.audioEl.current.play();
   };
 
   const generateBalloonID = () => {
@@ -399,8 +429,10 @@ const POPParty = () => {
                         Mejores puntajes
                       </h3>
                       {ranking.map((rank, index) => (
-                        <div className="flexbox bg-white radius-round min-w-[320px] max-w-[100%] px-[1rem] py-[.5rem] my-[.5rem]"
-                        key={'score-'+index}>
+                        <div
+                          className="flexbox bg-white radius-round min-w-[320px] max-w-[100%] px-[1rem] py-[.5rem] my-[.5rem]"
+                          key={"score-" + index}
+                        >
                           <span
                             className={`font-bold absolute left-[16px]  text-[2.5rem] ${
                               index == 0
@@ -486,6 +518,10 @@ const POPParty = () => {
         </div>
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+      />
       <MenuOptionsUtil />
     </>
   );

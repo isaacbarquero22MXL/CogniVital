@@ -551,7 +551,7 @@ export const svgImages = {
       ></g>
       <g id="SVGRepo_iconCarrier">
         {" "}
-        <rect width="24" height="24" fill="white"></rect>{" "}
+        <rect width="24" height="24" fill="none"></rect>{" "}
         <path
           fillRule="evenodd"
           clipRule="evenodd"

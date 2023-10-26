@@ -7,6 +7,16 @@ import MoneyOptions from "./MoneyOptions";
 //style
 import "./../../assets/css/money-counter.css";
 import DraggableMoney from "./DraggableMoney";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "pagos exactos",
+  description: (
+    <>
+      <div className="mb-[1.5rem]">Tienes a tu disposición todos los valores monetarios de Costa Rica. En pantalla saldrá una cifra numérica que debes completar con el dinero. Para comenzar haz clic con el raton en la moneda o billete que prefieras y luego podrás moverlo por el tablero arrastrando el ratón. El juego consiste en acertar la cifra numérica con el dinero que tienes en el tablero. Para eliminar el dinero que no ocupas arrástralo al basurero. <br/><br/> <span className="font-bold">PISTA:</span> Cuando la cifra esta por debajo del valor a completar, los focos alrededor de la cifra estarán en color <span className="text-[var(--bg-green)] font-bold">verde</span>, pero si el valor ha sobrepasado la cifra los focos serán de color <span className="text-[var(--bg-red)] font-bold">rojo</span>.</div>
+    </>
+  ),
+};
 
 const MoneyCounter = () => {
   //Hooks
@@ -136,6 +146,12 @@ const MoneyCounter = () => {
           );
         }
       }
+    }else{
+      if(playerValue == 0 && moneyTableRef.current){
+        moneyTableRef.current.children[0].classList.remove(
+          "border-animated-red"
+        );
+      }
     }
   }, [playerValue]);
 
@@ -250,6 +266,11 @@ const MoneyCounter = () => {
         )}
         {fireConfetti && <Firework animationDuration={5000} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+        className={`max-w-7xl mx-auto ${isGameStarted ? 'mt-[200px]': ''}`}
+      />
       <MenuOptionsUtil />
     </>
   );

@@ -7,6 +7,20 @@ import { sentences } from "./sentences";
 import "./../../assets/css/form-sentence.css";
 import Confetti from "../../utils/Confetti";
 import Firework from "../../utils/Firework";
+import HowToPlay from "../../components/Util/HowToPlay";
+
+const gameInfo = {
+  gameName: "armar la oración",
+  description: (
+    <>
+      <span>Existen dos manera de jugar armar la oración. La primera es pedirle ayuda a alguien para que escriba una oración original, pero ¡hey!, no mires lo que escribe. Cuando has escrito la oración presiona la tecla`</span>
+      <i>enter</i>
+      <span/>para comenzar o haz clic con el ratón sobre el simbolo &nbsp;{getIcon("checkIcon", "w-[24px] inline-block")}{" "}<span/>
+      <span>. La otra opción es hacer clic en generar una oración aleatoria. El juego consiste en que la oración se va a desornedar por palabras y tendrás que usar tu lógica para volver a armarla como era originalmente. Selecciona cada palabra para ir armando la oración. ¡Suerte!</span>
+    </>
+  ),
+};
+
 const FormSentence = () => {
   // Hooks
   const [sentence, setSentence] = useState("");
@@ -44,7 +58,7 @@ const FormSentence = () => {
 
   // start game
   const startGame = (randomSentence = false) => {
-    if(!randomSentence) {
+    if (!randomSentence) {
       if (sentence.split(" ").length <= 2) {
         setInputError(
           "Debes escribir almenos tres palabras para iniciar el juego"
@@ -59,7 +73,7 @@ const FormSentence = () => {
     let mySuffledSentence = shuffleArray(mySplitSentence); // suffled array
     setSplitSentence(mySuffledSentence); // set state with suffled array
     setIsGameStarted(true);
-    setInputError('');
+    setInputError("");
   };
 
   // generate random sentence
@@ -332,6 +346,10 @@ const FormSentence = () => {
         </div>
         {fireConfetti && <Firework animationDuration={1500} />}
       </div>
+      <HowToPlay
+        gameName={gameInfo.gameName}
+        description={gameInfo.description}
+      />
       <MenuOptionsUtil />
     </>
   );

@@ -37,6 +37,13 @@
   ) !important;
 }
 
+.golden-text{
+  background: linear-gradient(45deg, #daa520, #ffd700, #f7e08d 50%, #daa520, #bf812c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .golden-ballon::after{
   content: '';
   position: absolute;
