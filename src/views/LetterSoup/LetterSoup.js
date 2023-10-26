@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import getIcon from "../../assets/img/svg";
-import Confetti from "../../utils/Confetti";
-import MenuOptions from "../Menu/MenuOptions";
 import MenuOptionsUtil from "../Menu/MenuOptionsUtil";
 import ReactBSAlert from "react-bootstrap-sweetalert";
 

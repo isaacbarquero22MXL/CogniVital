@@ -3,8 +3,6 @@ import { useState } from "react";
 import "./../../assets/css/color-memory.css";
 import ReactBSAlert from "react-bootstrap-sweetalert";
 import getIcon from "../../assets/img/svg";
-import Confetti from "../../utils/Confetti";
-import MenuOptions from "../Menu/MenuOptions";
 import MenuOptionsUtil from "../Menu/MenuOptionsUtil";
 import Firework from "../../utils/Firework";
 import HowToPlay from "../../components/Util/HowToPlay";

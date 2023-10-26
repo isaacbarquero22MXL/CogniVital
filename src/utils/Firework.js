@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import confetti from "https://cdn.skypack.dev/canvas-confetti@1.4.0";
+import confetti from "canvas-confetti";
 
 const Firework = ({animationDuration}) => {
   useEffect(() => {
