@@ -1,0 +1,35 @@
+.sentence-input{
+    padding: .5rem 2rem;
+    border-radius: 5rem;
+}
+
+.sentence-input:focus-visible{
+    outline: none !important;
+}
+
+.accept-sentence-btn{
+    padding: .5rem 2rem;
+    transition: 150ms;   
+}
+
+.accept-sentence-btn:hover{
+    transform: scale(.95);
+}
+
+.check-icon{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 150ms;
+}
+
+.check-icon:hover{
+    transform: translateY(-50%) scale(.95);
+}
+
+.disabled-option{
+    pointer-events: none !important;
+    background-color: gray !important;
+    color: rgba(0, 0, 0, .65);
+}

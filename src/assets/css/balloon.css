@@ -1,0 +1,96 @@
+.balloon-wrapper {
+  transform: scale(0.75);
+  position: absolute;
+  bottom: -300px;
+  animation: move-ballon 3s linear infinite;
+}
+
+@keyframes move-ballon {
+  100%{
+    bottom: calc(100% + 300px);
+  }
+}
+
+.balloon {
+  display: inline-block;
+  width: 120px;
+  height: 135px;
+  border-radius: 80%;
+  background: hsl(215, 50%, 65%);;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+  margin: 20px 30px;
+  transition: transform 0.5s ease;
+  z-index: 10;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.golden-ballon {
+  background: linear-gradient(
+    45deg,
+    #daa520,
+    #ffd700,
+    #f7e08d 50%,
+    #daa520,
+    #bf812c
+  ) !important;
+}
+
+.golden-ballon::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 135px;
+  border-radius: 80%;
+  background: transparent;
+  box-shadow:  0 0 10px #daa520,  0 0 15px #f7e08d,  0 0 20px #bf812c , 0 0 10px #FFF;
+}
+
+.golden-knot{
+  border-bottom-color: #daa520 !important;
+}
+@keyframes balloons {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+.balloon-knot {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid hsl(215, 50%, 65%);
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -100;
+  border-radius: 0.25rem;
+}
+
+.balloon-rope {
+  display: inline-block;
+  top: 147px;
+  left: 50%;
+  position: absolute;
+  height: 250px;
+  width: 1px;
+  margin: 0 auto;
+  content: "";
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.cloudy-bg{
+  background: url(./../img//cloudyBG.webp);
+  background-size: 100% 100%;
+}

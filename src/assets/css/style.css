@@ -14,7 +14,7 @@
   --bg-color: #CCC7BD;
   --bg-color-2: #2d72c5;
   --bg-rgba-95: rgba(248,242,203, 0.75);
-  --bg-rgba-5: rgba(248,242,203, 0.25);
+  --bg-rgba-5: rgba(248,242,203, 0.95);
   --color-white: #fff;
   --body-color: #f6f7f8;
   --subcolor-text: #859bbf;
@@ -29,11 +29,16 @@
   --light-color: #f8e8bc;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* body */
 body {
-    background: #000 !important;
+    background: linear-gradient(-45deg, var(--bg-color) 40%, var(--color-white)) !important;
     font-family: 'Courier New', Courier, monospace !important;
     height: 100%;
+    color: #363A47;
   }
 
 a {
@@ -88,12 +93,8 @@ body .bg-hover-color {
   height: 0;
 }
 
-.dtqzBx div:first-child {
-  overflow: auto;
-}
-
-.hgByPU div:first-child {
-  overflow: initial !important;
+.text-stroke {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .5), 1px -1px 0 rgba(0, 0, 0, .5), -1px 1px 0 rgba(0, 0, 0, .5), 1px 1px 0 rgba(0, 0, 0, .5);
 }
 
 /* footer */
@@ -352,7 +353,15 @@ body #sidenav .MuiPaper-root {
   display: flex !important;
 }
 
+.justify-content-start{
+  justify-content: flex-start !important;
+}
+
 /* Box shadow */
+.smooth-shadow{
+  box-shadow: 0px 8px 10px -3px rgba(0, 0, 0, 0.1), 0px 0px 16px -3px rgba(0, 0, 0, 0.05), inset 1px 1px 16px -3px rgba(0, 0, 0, 0.25) !important;
+}
+
 .neumorphism-shadow {
   box-shadow: inset -25px 25px 50px #d9d9d9, 0 0 10px #d9d9d9,
     inset 25px -25px 50px #ffffff !important;
@@ -445,6 +454,10 @@ body #sidenav .MuiPaper-root {
   z-index: -1;
 }
 
+.no-border{
+  border: none !important;
+}
+
 @keyframes border-animate {
   to {
     border-color: var(--bg-color);
@@ -471,6 +484,29 @@ body #sidenav .MuiPaper-root {
     transform: scale(1);
   }
 }
+
+.pop-up-message{
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, 20%);   
+  opacity: 0;
+  animation: pop-up-animation 2s ease-in-out forwards;
+}
+
+@keyframes pop-up-animation{
+  0%{
+      top: 20%;
+  }
+  50%{
+      opacity: 1;
+      top: 10%;
+  }
+  100%{
+      top: 10%;
+      opacity: 0;
+  }
+}
+
 
 .t-duration-1 {
   transition: 0.25s;
@@ -1389,10 +1425,11 @@ span[aria-busy="true"] {
   background-color: transparent !important;
 }
 
-.sweet-alert span {
-  background-color: rgb(92, 184, 92) !important;
+.sweet-alert .btn{
+  padding: .5rem 1.5rem;
+  border-radius: .25rem;
+  color: black;
 }
-
 /* 
 ======================================================
 ====================== BREAKPOINTS ===================

@@ -1,0 +1,55 @@
+.letter-soup {
+    gap: 2px;
+    border: 2px solid rgba(0, 0, 0, .5);
+    width: fit-content;
+    margin: 1.5rem auto;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #ccc;
+    font-size: 26px;
+    background-color: #FFF;
+  }
+
+  .words-to-find{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem auto;
+    border: 2px solid rgba(0, 0, 0, .5);
+    border-left: none;
+  }
+
+  .marked{
+    background-color: #000;
+    color: white;
+    font-weight: bolder;
+  }
+
+  .strike-out-text{
+    text-decoration: line-through;
+  }
+
+  .word-to-find-wrapper > div{
+    /* border: 2px solid rgba(0, 0, 0, .5); */
+  }
+
+  canvas{
+    /* top: 50% !important;
+    overflow: visible !important; */
+  }
+
+  @media screen and (max-width: 1200px) {
+    .letter-soup-wrapper .letter-soup-content{
+        flex-direction: column;
+    }
+  }
+

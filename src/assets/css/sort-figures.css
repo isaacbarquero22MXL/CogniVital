@@ -1,0 +1,73 @@
+.game-wrapper{
+    height: calc(100vh - 93px);
+}
+
+.circle svg * {
+  fill: red !important;
+}
+
+.triangle svg * {
+  fill: green !important;
+}
+
+.square svg * {
+  fill: blue !important;
+}
+
+.star svg * {
+  fill: yellow !important;
+}
+
+.circle svg *, .triangle svg * , .square svg *, .star svg * {
+    stroke: #000;
+    stroke-width: .1px;
+  }
+
+.circle-container {
+  background: linear-gradient(0, rgba(255, 0, 0, 1), transparent);
+}
+
+.square-container {
+  background: linear-gradient(0, rgba(0, 0, 255, 1), transparent);
+}
+
+.triangle-container {
+  background: linear-gradient(0, rgba(0, 255, 0, 1), transparent);
+}
+
+.star-container {
+  background: linear-gradient(0, rgba(255, 255, 0, .75), transparent);
+}
+
+.figures-containers {
+  opacity: 0.75 !important;
+}
+
+.figures-containers div span:nth-child(2) {
+  color: rgb(255, 255, 255) !important;
+  font-weight: bolder;
+  text-shadow: 0 0 2px #000;
+}
+
+.draggable {
+  width: 50px;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: move;
+}
+
+.sort-game-wrapper{
+    justify-content: flex-end !important;
+    background: linear-gradient(0, rgba(255, 255,2550, .75), transparent);
+}
+
+.figure-placed{
+    pointer-events: none !important;
+    opacity: .5;
+    z-index: -1;
+}
+

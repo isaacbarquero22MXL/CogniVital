@@ -1,0 +1,37 @@
+.quix-wrapper .MuiStepConnector-root {
+    top: 7px !important;
+}
+
+.quix-wrapper .MuiStepIcon-root.Mui-active{
+    color: rgb(35, 35, 35) !important; 
+}
+
+.quix-wrapper .MuiStepIcon-root{
+   width: 2rem;
+   height: 2rem;
+}
+
+.quix-wrapper .MuiStepIcon-root.Mui-completed{
+    color: green !important;
+
+}
+
+.quix-wrapper .MuiStepLabel-alternativeLabel.Mui-completed svg g path{
+    fill: green !important;
+}
+
+.quix-wrapper .MuiStepLabel-alternativeLabel.Mui-completed svg.wrong g path{
+    fill: #FB3A47 !important;
+}
+
+.quix-wrapper .MuiStepLabel-alternativeLabel.Mui-completed svg g rect{
+   display: none !important;
+}
+
+.correct{
+    background: #5DBB64;
+}
+
+.incorrect{
+    background: #DE2821;
+}

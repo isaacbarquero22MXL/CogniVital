@@ -1,0 +1,33 @@
+.labyrinth-canvas rect{
+    fill: none !important;
+}
+
+.labyrinth-canvas{
+    height: 75vh !important;
+}
+
+.labyrinth-canvas-wrapper{
+    background-color: var(--color-white);
+}
+
+.labyrinth-image{
+    width: 80%;
+    height: 75vh;
+}
+
+.canvas-option{
+    transition: 150ms;
+}
+
+.canvas-option:hover{
+    transform: scale(1.05);
+}
+
+.canvas-option:active{
+    transform: scale(0.85);
+}
+
+.palette-selected{
+    box-shadow: 0 0 5px -3px rgba(0, 0, 0, .75), inset 0 0 5px -3px rgba(0, 0, 0, .75), 0 0 5px -3px rgba(0, 0, 0, .75);
+    border-radius: .25rem;
+}

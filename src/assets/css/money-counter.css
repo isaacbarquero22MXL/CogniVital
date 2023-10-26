@@ -1,0 +1,95 @@
+.coin, .draggable-money-item.coin {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+}
+
+.bill, .draggable-money-item.bill{
+    width: 200px;
+    height: 100px;
+    max-width: 200px;
+}
+
+.money-options-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
+}
+
+.money-options-wrapper div img{
+    object-fit: fill;
+    filter: drop-shadow(2.5px 5px 2px #000);
+}
+
+.money-game-table, .money-qty-container{
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.money-qty-container{
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translate(-50%, 0);
+    width: 25%;
+    height: 100px;
+    background-color: white;
+    border-radius: .25rem;
+    border: 10px dotted rgba(0, 0, 0, .5);
+    animation: border-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes border-animation{
+    from{
+       border-color: rgba(0, 0, 0, .5)
+    }to{
+        border-color: rgb(12, 158, 29);
+    }
+}
+
+@keyframes border-animation-red{
+    from{
+       border-color: rgba(0, 0, 0, .5)
+    }to{
+        border-color: rgb(205, 20, 20);
+    }
+}
+
+.border-animated-red{
+    animation: border-animation-red 1.5s ease-in-out infinite alternate !important; 
+}
+
+.money-item-trash{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 150px;
+    border: 4px dashed rgba(0, 0, 0, .5);
+    border-bottom: none;
+    border-right: none;
+}
+
+.money-deleted{
+    transform: scale(1);
+    animation: item-deleted .5s ease-in-out forwards;
+}
+
+@keyframes item-deleted {
+    from {
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+
+.round-container{
+    background: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+}
+
+.draggable-money-item{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+}

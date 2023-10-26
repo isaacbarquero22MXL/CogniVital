@@ -1,54 +1,53 @@
-.old-people-cover{
-    height: 500px;
-    max-width: 100%;
-    position: relative;
+.old-people-cover {
+  height: 500px;
+  max-width: 100%;
+  position: relative;
 }
 
-.old-people-cover::after{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-image: url('../img/oldPeople.png');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
+.old-people-cover::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../img/oldPeople.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.cover-card{
-    height: 350px;
+.cover-card {
+  height: 350px;
 }
 
-.content{
+.content {
   height: 100vh;
 }
 
-.content-1{
+.content-1 {
   background-image: url(../img/tv-color-bars.png);
+  background-size: 100% 100%;
 }
 
-
 @media screen and (max-width: 992px) {
-    .old-people-cover{
-        height: auto;
-    }
+  .old-people-cover {
+    height: auto;
+  }
 
-    .cover-card{
-        height: 225px;
-    }
+  .cover-card {
+    height: 225px;
+  }
 
-    .brain{
-        width:45px !important;
-    }
+  .brain {
+    width: 45px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .brain{
-        width: 30px !important;
-    }
+  .brain {
+    width: 30px !important;
+  }
 }
 
 /* .tv {
@@ -57,35 +56,34 @@
     background-color: black;
     position: relative;
   } */
-  
-  .screen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+
+.screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.horizontal-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+@keyframes horizontal-line-animation {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  .horizontal-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  100% {
+    transform: translateX(100%);
   }
-  
-  .horizontal-line {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-  }
-  
-  @keyframes horizontal-line-animation {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
+}

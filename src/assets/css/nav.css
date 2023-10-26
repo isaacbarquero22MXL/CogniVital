@@ -4,14 +4,22 @@
 }
 
 .nav-responsive-hidden{
-    transition: .5s all !important;
-    opacity: 0;
+    animation: close-nav .5s ease-in-out forwards;
 }
 
 .app-nav{
-    animation-delay: 5.5s !important;
     position: relative;
     z-index: 10;
+}
+
+@keyframes close-nav{
+    0%{
+        right: 0;
+    }
+    100%{
+        right: -100%;
+        opacity: 0;
+    }
 }
 
 @keyframes move-nav{
@@ -20,5 +28,11 @@
     }
     100%{
         right: 0;
+        opacity: 1;
     }
+}
+
+header.dark-mode .app-name, header.dark-mode .text-black,
+header.dark-mode .toggle-menu-btn{
+    color: var(--color-white) !important;
 }
