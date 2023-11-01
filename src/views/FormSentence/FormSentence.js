@@ -50,11 +50,6 @@ const FormSentence = () => {
     }
   }, []);
 
-  // I want to know sentence's value each time its value has changed
-  useEffect(() => {
-    console.log(sentence);
-  }, [sentence]);
-
   // start game
   const startGame = (randomSentence = false) => {
     if (!randomSentence) {

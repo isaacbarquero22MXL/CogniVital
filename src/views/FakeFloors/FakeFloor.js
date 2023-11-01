@@ -353,7 +353,6 @@ const FakeFloor = () => {
   const selectRandomFigureForAnswer = () => {
     const answerFruitType = Math.floor(Math.random() * numberOfFloors) + 1;
     let answerFigure = figuresTable[answerFruitType - 1];
-    console.log(figuresTable);
     if (figureOfAnswer.id && figureOfAnswer.id == answerFigure.id) {
       selectRandomFigureForAnswer();
     } else {
@@ -423,7 +422,6 @@ const FakeFloor = () => {
         if (figureOfAnswer.id === fruitSelected) {
           continueGame();
         } else {
-          console.log("game ended");
           setIndication("El juego ha terminado");
           resetGame();
         }

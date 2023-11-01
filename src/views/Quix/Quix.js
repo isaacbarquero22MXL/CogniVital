@@ -145,7 +145,7 @@ const Quix = () => {
       // End game
       setEndPanel(EndGamePanel);
       setIsGameEnded(true);
-      console.log("game ended");
+     // console.log("game ended");
     }
   };
 
