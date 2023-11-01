@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5cfee6d0.css",
-    "main.js": "/static/js/main.28eff5c1.js",
+    "main.js": "/static/js/main.f4260fe5.js",
     "static/media/charlesChaplin.gif": "/static/media/charlesChaplin.a85c3d3df763a0ca3ade.gif",
     "static/media/oldPeople.png": "/static/media/oldPeople.e2dae14beadf7e8224bd.png",
     "static/media/1000-colones.jpg": "/static/media/1000-colones.40e4331124410771f3d8.jpg",
@@ -51,10 +51,10 @@
     "static/media/scree-lines.webp": "/static/media/scree-lines.cf07949fd4fef75197c8.webp",
     "index.html": "/index.html",
     "main.5cfee6d0.css.map": "/static/css/main.5cfee6d0.css.map",
-    "main.28eff5c1.js.map": "/static/js/main.28eff5c1.js.map"
+    "main.f4260fe5.js.map": "/static/js/main.f4260fe5.js.map"
   },
   "entrypoints": [
     "static/css/main.5cfee6d0.css",
-    "static/js/main.28eff5c1.js"
+    "static/js/main.f4260fe5.js"
   ]
 }

@@ -222,7 +222,7 @@ const LetterSoup = () => {
           }
           attempts++;
           if (attempts == 9) {
-            console.log("obtenio 10");
+            //console.log("obtenido 10");
           }
         }
       }
@@ -240,7 +240,7 @@ const LetterSoup = () => {
 
       return filledArray;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
