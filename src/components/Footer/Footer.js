@@ -72,7 +72,7 @@ const Footer = () => {
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-800">
             © {new Date().getFullYear().toString()}
-            <a href="/" className="hover:underline text-sm">
+            <a href="/autor" className="hover:underline text-sm">
             &nbsp;Isaac Barquero Lizano
             </a>
             . Todos los derechos reservados
