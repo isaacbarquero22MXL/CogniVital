@@ -73,7 +73,7 @@ const Footer = () => {
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-800">
             © {new Date().getFullYear().toString()}
             <a href="/" className="hover:underline text-sm">
-            &nbsp;CogniVital
+            &nbsp;Isaac Barquero Lizano
             </a>
             . Todos los derechos reservados
           </span>
